@@ -1,4 +1,4 @@
-orgin/: orgin model (CNN, Self-Attention) in BAKSA
+orgin/: orgin model (CNN, Self-Attention) in BAKSA <br />
 output/: stdout when running models
 CNNModel.py, SelfAttentionModel.py: models are used in hybrid model (our model)
 Multichane...py (1st model): 1 Linear (400 - 3), softmax, dropout 0.3
