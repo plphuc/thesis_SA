@@ -7,4 +7,5 @@ hybrid_{n}: our model with others architectures/parameters <br />
 - n = 2: 2 Linear layers (400-200, 200-3), dropout 0.3, softmax <br />
 main_3_{n}.py: main.py to run the corresponding n model
 
+[model description](https://www.notion.so/plphuc/Survey-results-5e55631af06d4b86a4e46854680f80ad)
  
