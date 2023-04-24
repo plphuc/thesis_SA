@@ -35,6 +35,6 @@ class AttentionModel(torch.nn.Module):
 		output = output.permute(1, 0, 2) # output.size() = (batch_size, num_seq, hidden_size)
 		
 		attn_output = self.attention_net(output, final_hidden_state)
-		# logits = self.fc(attn_output)
+		logits = self.fc(attn_output)
 		
 		return attn_output
