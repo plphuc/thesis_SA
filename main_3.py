@@ -16,7 +16,7 @@ import sys
 
 data_path = "./data/yelp_min/"
 train_name = "yelp_min_train.csv"
-test_name = "yelp-min_test.csv"
+test_name = "yelp_min_test.csv"
 model_save_path = sys.argv[1]
 
 
@@ -51,7 +51,7 @@ TEXT = data.Field(batch_first=True,
                   unk_token = unk_token_idx)
 
 LABEL = data.LabelField()
-fields = [('text',TEXT),('sentiment',LABEL)]
+fields = [('text',TEXT),('stars',LABEL)]
 
 train_data, test_data = data.TabularDataset.splits(
                             path = data_path,
