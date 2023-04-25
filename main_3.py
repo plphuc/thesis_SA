@@ -1,4 +1,4 @@
-58+import random as rd
+import random as rd
 import numpy as np
 import time
 
