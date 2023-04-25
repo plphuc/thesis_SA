@@ -38,6 +38,14 @@ class MultiChannel_CNNAttentionModel(nn.Module):
         self.softmax = nn.Softmax(dim=1)
 
 
+    def attention_net(self, lstm_output, final_state):
+    
+        hidden = final_state.squeeze(0)
+        attn_weights = torch.bmm(lstm_output, hidden.unsqueeze(2)).squeeze(2)
+        soft_attn_weights = F.softmax(attn_weights, 1)
+        new_hidden_state = torch.bmm(lstm_output.transpose(1, 2), soft_attn_weights.unsqueeze(2)).squeeze(2)
+        
+        return new_hidden_state
 
     def forward(self, text, batch_size):
         with torch.no_grad():
