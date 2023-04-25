@@ -34,7 +34,7 @@ class MultiChannel_CNNAttentionModel(nn.Module):
         
         # Hybrid
         self.fc1 = nn.Linear(400, 200)
-        self.fc2 = nn.Linear(400, output_dim)
+        self.fc2 = nn.Linear(200, output_dim)
         self.softmax = nn.Softmax(dim=1)
 
 
@@ -64,13 +64,13 @@ class MultiChannel_CNNAttentionModel(nn.Module):
         h_0 = Variable(torch.zeros(1, batch_size, self.hidden_size).cuda())
         c_0 = Variable(torch.zeros(1, batch_size, self.hidden_size).cuda())
 
-        attn_output, (final_hidden_state, final_cell_state) = self.lstm(input, (h_0, c_0))
+        attn_output, (final_hidden_state, final_cell_state) = self.lstm(embedded, (h_0, c_0))
         attn_output = attn_output.permute(1, 0, 2)
         attn_output = self.attention_net(attn_output, final_hidden_state)
 
         cnn_attention_cat = torch.cat((cnn_output, attn_output), 1)
-        output_ln1 = self.fc2(cnn_attention_cat)
+        output_ln1 = self.fc1(cnn_attention_cat)
         output_do = self.do(output_ln1)
-        # output_ln2 = self.fc2(output_do)
+        output_ln2 = self.fc2(output_do)
 
-        return output_do
+        return output_ln2

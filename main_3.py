@@ -123,7 +123,9 @@ def train(model, iterator, optimizer, criterion):
     # Compute the loss
 
     loss = criterion(predictions, batch.sentiment)
-    acc,_,_ = categorical_accuracy(predictions,batch.sentiment)
+    print("predictions shape: ", predictions.shape)
+    acc,_,cfs = categorical_accuracy(predictions,batch.sentiment)
+    print("cfs matrix shape: ", cfs.shape)
 
     # Backpropage the loss and compute the gradients
     loss.backward()
@@ -148,7 +150,6 @@ def evaluate(model, iterator, criterion):
     for batch in iterator:
       #predictions = model(batch.text).squeeze(1)
       predictions = model(batch.text,batch_size=len(batch)).squeeze(1)
-
       loss = criterion(predictions, batch.sentiment)
       acc,all_acc,confusion_mat_temp = categorical_accuracy(predictions, batch.sentiment)
       
@@ -178,7 +179,7 @@ HIDDEN_DIM = 100
 
 # from origin_attention_model  import AttentionModel
 # from origin_cnn_model import BERTCNNSentiment
-from MultiChannel_CNNAttentionModel import MultiChannel_CNNAttentionModel
+from hybrid import MultiChannel_CNNAttentionModel
 
 # model = torch.load(model_save_name)
 
