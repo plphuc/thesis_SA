@@ -14,9 +14,9 @@ from sklearn.metrics import f1_score
 from transformers import BertTokenizer, AutoTokenizer, XLMRobertaTokenizer, BertModel
 import sys
 
-data_path = "./data/"
-train_name = "train.csv"
-test_name = "test.csv"
+data_path = "./data/yelp_min/"
+train_name = "yelp_min_train.csv"
+test_name = "yelp-min_test.csv"
 model_save_path = sys.argv[1]
 
 
