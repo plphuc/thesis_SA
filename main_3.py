@@ -1,9 +1,9 @@
-import random as rd
+58+import random as rd
 import numpy as np
 import time
 
 import torch
-from torchtext.legacy import datasets, data
+from torchtext import datasets, data
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
@@ -14,9 +14,9 @@ from sklearn.metrics import f1_score
 from transformers import BertTokenizer, AutoTokenizer, XLMRobertaTokenizer, BertModel
 import sys
 
-data_path = "../data/yelp_academic_5/"
-train_name = "train_yelp.csv"
-test_name = "test_yelp.csv"
+data_path = "./data/"
+train_name = "train.csv"
+test_name = "test.csv"
 model_save_path = sys.argv[1]
 
 
