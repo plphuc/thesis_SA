@@ -51,7 +51,7 @@ TEXT = data.Field(batch_first=True,
                   unk_token = unk_token_idx)
 
 LABEL = data.LabelField()
-fields = [('stars',LABEL), ('text',TEXT)]
+fields = [('sentiment',LABEL), ('text',TEXT)]
 
 train_data, test_data = data.TabularDataset.splits(
                             path = data_path,
