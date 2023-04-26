@@ -123,9 +123,7 @@ def train(model, iterator, optimizer, criterion):
     # Compute the loss
 
     loss = criterion(predictions, batch.sentiment)
-    print("predictions shape: ", predictions.shape)
     acc,_,cfs = categorical_accuracy(predictions,batch.sentiment)
-    print("cfs matrix shape: ", cfs.shape)
 
     # Backpropage the loss and compute the gradients
     loss.backward()
