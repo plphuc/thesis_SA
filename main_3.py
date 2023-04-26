@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 import torch
-from torchtext import datasets, data
+from torchtext.legacy import datasets, data
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
