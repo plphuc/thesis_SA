@@ -23,14 +23,9 @@ class MultiChannel_CNNAttentionModel(nn.Module):
         self.conv_0 = nn.Conv2d(1, n_filters, (filter_sizes[0], embedding_dim))
         self.conv_1 = nn.Conv2d(1, n_filters, (filter_sizes[1], embedding_dim))
         self.conv_2 = nn.Conv2d(1, n_filters, (filter_sizes[2], embedding_dim))
-        self.fc = nn.Linear(len(filter_sizes) * n_filters, output_dim)
-        
-
-
 
         # Attention
         self.lstm = nn.LSTM(embedding_length, hidden_dim)
-        self.fc = nn.Linear(hidden_dim, output_dim)
         
         # Hybrid
         self.fc1 = nn.Linear(400, 200)

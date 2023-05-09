@@ -14,9 +14,9 @@ from sklearn.metrics import f1_score
 from transformers import BertTokenizer, AutoTokenizer, XLMRobertaTokenizer, BertModel
 import sys
 
-data_path = "./data/yelp_min/"
-train_name = "yelp_min_train.csv"
-test_name = "yelp_min_test.csv"
+data_path = "../../data/yelp_academic_5/"
+train_name = "train_yelp.csv"
+test_name = "test_yelp.csv"
 model_save_path = sys.argv[1]
 
 
@@ -51,7 +51,7 @@ TEXT = data.Field(batch_first=True,
                   unk_token = unk_token_idx)
 
 LABEL = data.LabelField()
-fields = [('sentiment',LABEL), ('text',TEXT)]
+fields = [('text',TEXT),('sentiment',LABEL)]
 
 train_data, test_data = data.TabularDataset.splits(
                             path = data_path,
@@ -123,7 +123,7 @@ def train(model, iterator, optimizer, criterion):
     # Compute the loss
 
     loss = criterion(predictions, batch.sentiment)
-    acc,_,cfs = categorical_accuracy(predictions,batch.sentiment)
+    acc,_,_ = categorical_accuracy(predictions,batch.sentiment)
 
     # Backpropage the loss and compute the gradients
     loss.backward()
@@ -148,6 +148,7 @@ def evaluate(model, iterator, criterion):
     for batch in iterator:
       #predictions = model(batch.text).squeeze(1)
       predictions = model(batch.text,batch_size=len(batch)).squeeze(1)
+
       loss = criterion(predictions, batch.sentiment)
       acc,all_acc,confusion_mat_temp = categorical_accuracy(predictions, batch.sentiment)
       
@@ -164,39 +165,35 @@ def epoch_time(start_time, end_time):
     elapsed_secs = int(elapsed_time - (elapsed_mins * 60))
     return elapsed_mins, elapsed_secs
 
-def count_parmeters(model):
+def count_parameters(model):
   return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 """# Check params"""
 
 OUTPUT_DIM = 3
-DROPOUT = 0.3
+DROPOUT = 0.2
 N_FILTERS = 100
-FILTER_SIZES = [2,3,4]
+FILTER_SIZES = [3,4,5]
 HIDDEN_DIM = 100
 
 # from origin_attention_model  import AttentionModel
 # from origin_cnn_model import BERTCNNSentiment
-from hybrid import MultiChannel_CNNAttentionModel
+from hybrid_model import MultiChannel_CNNAttentionModel
 
 # model = torch.load(model_save_name)
 
-# Commented out IPython magic to ensure Python compatibility.
-# %load_ext autoreload
-# %autoreload 2
 
 # from MultiChannel_CNNAttentionModel import MultiChannel_CNNAttentionModel
 # model_name = "cnn_attention_model2"
 model = MultiChannel_CNNAttentionModel(bert, OUTPUT_DIM, DROPOUT, N_FILTERS, FILTER_SIZES, BATCH_SIZE, HIDDEN_DIM, VOCAB_SIZE, 768)
 # model = AttentionModel(bert, BATCH_SIZE, OUTPUT_DIM, HIDDEN_DIM, VOCAB_SIZE, 768)
 # model = BERTCNNSentiment(bert, OUTPUT_DIM, DROPOUT, N_FILTERS, FILTER_SIZES)
+
 model = model.to(device)
-
-optimizer = optim.Adam(model.parameters())
+optimizer = optim.SGD(model.parameters(), lr=0.01, weight_decay =0.01)
 criterion = nn.CrossEntropyLoss().to(device)
-nll_loss = nn.NLLLoss().to(device)
 log_softmax = nn.LogSoftmax().to(device)
-
+print(f'The {model} has {count_parameters(model):,} trainable parameters')
 """# Execute model"""
 
 N_EPOCHS = 20
