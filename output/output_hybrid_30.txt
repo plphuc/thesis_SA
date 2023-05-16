@@ -1,0 +1,150 @@
+nohup: ignoring input
+Bert Tokenizer Loaded...
+Data loading complete
+Number of training examples: 441000
+Number of validation examples: 189000
+Number of test examples: 270000
+defaultdict(None, {'0.0': 0, '1.0': 1, '2.0': 2})
+Device in use:  cuda
+Epoch: 01 | Epoch Time: 15m 46s
+	Train Loss: 0.452 | Train Acc: 81.47%
+	 Val. Loss: 0.381 |  Val. Acc: 84.92%
+tensor([0.8790, 0.7178, 0.9280, 0.8372])
+tensor([[55639.,  6178.,  1275.],
+        [ 6332., 46067., 10744.],
+        [  820.,  3160., 58785.]], dtype=torch.float64)
+Epoch: 02 | Epoch Time: 15m 51s
+	Train Loss: 0.376 | Train Acc: 85.04%
+	 Val. Loss: 0.346 |  Val. Acc: 86.22%
+tensor([0.8791, 0.7740, 0.9139, 0.8526])
+tensor([[55627.,  6594.,   871.],
+        [ 5865., 49458.,  7820.],
+        [  691.,  4203., 57871.]], dtype=torch.float64)
+Epoch: 03 | Epoch Time: 15m 58s
+	Train Loss: 0.355 | Train Acc: 85.94%
+	 Val. Loss: 0.340 |  Val. Acc: 86.55%
+tensor([0.8700, 0.8362, 0.8711, 0.8579])
+tensor([[54968.,  7612.,   512.],
+        [ 5173., 53334.,  4636.],
+        [  778.,  6726., 55261.]], dtype=torch.float64)
+Epoch: 04 | Epoch Time: 15m 51s
+	Train Loss: 0.341 | Train Acc: 86.52%
+	 Val. Loss: 0.335 |  Val. Acc: 86.76%
+tensor([0.9216, 0.7391, 0.9259, 0.8567])
+tensor([[58197.,  4137.,   758.],
+        [ 7973., 47388.,  7782.],
+        [  957.,  3420., 58388.]], dtype=torch.float64)
+Epoch: 05 | Epoch Time: 15m 53s
+	Train Loss: 0.332 | Train Acc: 86.98%
+	 Val. Loss: 0.335 |  Val. Acc: 86.75%
+tensor([0.9349, 0.7240, 0.9283, 0.8561])
+tensor([[59047.,  3421.,   624.],
+        [ 8886., 46369.,  7888.],
+        [ 1029.,  3202., 58534.]], dtype=torch.float64)
+Epoch: 06 | Epoch Time: 15m 59s
+	Train Loss: 0.323 | Train Acc: 87.20%
+	 Val. Loss: 0.327 |  Val. Acc: 87.09%
+tensor([0.8844, 0.7866, 0.9254, 0.8620])
+tensor([[55931.,  6375.,   786.],
+        [ 5583., 50266.,  7294.],
+        [  570.,  3793., 58402.]], dtype=torch.float64)
+Epoch: 07 | Epoch Time: 15m 50s
+	Train Loss: 0.316 | Train Acc: 87.55%
+	 Val. Loss: 0.321 |  Val. Acc: 87.45%
+tensor([0.9030, 0.7893, 0.9116, 0.8655])
+tensor([[57075.,  5424.,   593.],
+        [ 6379., 50487.,  6277.],
+        [  727.,  4334., 57704.]], dtype=torch.float64)
+Epoch: 08 | Epoch Time: 15m 52s
+	Train Loss: 0.310 | Train Acc: 87.80%
+	 Val. Loss: 0.322 |  Val. Acc: 87.36%
+tensor([0.8952, 0.7851, 0.9269, 0.8646])
+tensor([[56524.,  5864.,   704.],
+        [ 5731., 50177.,  7235.],
+        [  668.,  3696., 58401.]], dtype=torch.float64)
+Epoch: 09 | Epoch Time: 15m 57s
+	Train Loss: 0.305 | Train Acc: 88.04%
+	 Val. Loss: 0.325 |  Val. Acc: 87.23%
+tensor([0.8637, 0.8315, 0.9077, 0.8652])
+tensor([[54534.,  7946.,   612.],
+        [ 4460., 53047.,  5636.],
+        [  470.,  5008., 57287.]], dtype=torch.float64)
+Epoch: 10 | Epoch Time: 15m 49s
+	Train Loss: 0.300 | Train Acc: 88.20%
+	 Val. Loss: 0.318 |  Val. Acc: 87.54%
+tensor([0.8883, 0.8229, 0.8982, 0.8678])
+tensor([[56170.,  6468.,   454.],
+        [ 5414., 52482.,  5247.],
+        [  719.,  5259., 56787.]], dtype=torch.float64)
+Epoch: 11 | Epoch Time: 15m 56s
+	Train Loss: 0.295 | Train Acc: 88.39%
+	 Val. Loss: 0.320 |  Val. Acc: 87.44%
+tensor([0.8967, 0.7919, 0.9219, 0.8658])
+tensor([[56639.,  5872.,   581.],
+        [ 5964., 50578.,  6601.],
+        [  685.,  4038., 58042.]], dtype=torch.float64)
+Epoch: 12 | Epoch Time: 15m 56s
+	Train Loss: 0.291 | Train Acc: 88.54%
+	 Val. Loss: 0.317 |  Val. Acc: 87.57%
+tensor([0.9234, 0.7840, 0.9035, 0.8667])
+tensor([[58328.,  4307.,   457.],
+        [ 7674., 50132.,  5337.],
+        [  870.,  4849., 57046.]], dtype=torch.float64)
+Epoch: 13 | Epoch Time: 15m 50s
+	Train Loss: 0.289 | Train Acc: 88.71%
+	 Val. Loss: 0.317 |  Val. Acc: 87.54%
+tensor([0.9131, 0.7861, 0.9134, 0.8667])
+tensor([[57684.,  4733.,   675.],
+        [ 7031., 50210.,  5902.],
+        [  711.,  4498., 57556.]], dtype=torch.float64)
+Epoch: 14 | Epoch Time: 15m 56s
+	Train Loss: 0.284 | Train Acc: 88.85%
+	 Val. Loss: 0.317 |  Val. Acc: 87.57%
+tensor([0.9136, 0.7765, 0.9212, 0.8663])
+tensor([[57685.,  4817.,   590.],
+        [ 7002., 49724.,  6417.],
+        [  781.,  3881., 58103.]], dtype=torch.float64)
+Epoch: 15 | Epoch Time: 15m 59s
+	Train Loss: 0.281 | Train Acc: 88.99%
+	 Val. Loss: 0.315 |  Val. Acc: 87.69%
+tensor([0.9078, 0.8006, 0.9062, 0.8685])
+tensor([[57359.,  5268.,   465.],
+        [ 6578., 51124.,  5441.],
+        [  775.,  4740., 57250.]], dtype=torch.float64)
+Epoch: 16 | Epoch Time: 15m 45s
+	Train Loss: 0.278 | Train Acc: 89.06%
+	 Val. Loss: 0.315 |  Val. Acc: 87.63%
+tensor([0.9043, 0.8113, 0.8967, 0.8683])
+tensor([[57158.,  5507.,   427.],
+        [ 6320., 51777.,  5046.],
+        [  749.,  5344., 56672.]], dtype=torch.float64)
+Epoch: 17 | Epoch Time: 15m 55s
+	Train Loss: 0.275 | Train Acc: 89.18%
+	 Val. Loss: 0.317 |  Val. Acc: 87.57%
+tensor([0.9103, 0.7929, 0.9064, 0.8670])
+tensor([[57489.,  5053.,   550.],
+        [ 6871., 50718.,  5554.],
+        [  720.,  4755., 57290.]], dtype=torch.float64)
+Epoch: 18 | Epoch Time: 15m 52s
+	Train Loss: 0.273 | Train Acc: 89.34%
+	 Val. Loss: 0.320 |  Val. Acc: 87.42%
+tensor([0.8984, 0.8293, 0.8805, 0.8669])
+tensor([[56746.,  6018.,   328.],
+        [ 5986., 52882.,  4275.],
+        [  854.,  6324., 55587.]], dtype=torch.float64)
+Epoch: 19 | Epoch Time: 15m 42s
+	Train Loss: 0.270 | Train Acc: 89.39%
+	 Val. Loss: 0.316 |  Val. Acc: 87.69%
+tensor([0.9153, 0.7854, 0.9146, 0.8681])
+tensor([[57853.,  4647.,   592.],
+        [ 7097., 50154.,  5892.],
+        [  728.,  4316., 57721.]], dtype=torch.float64)
+Epoch: 20 | Epoch Time: 15m 51s
+	Train Loss: 0.267 | Train Acc: 89.49%
+	 Val. Loss: 0.323 |  Val. Acc: 87.44%
+tensor([0.9236, 0.7935, 0.8869, 0.8655])
+tensor([[58364.,  4360.,   368.],
+        [ 7791., 50710.,  4642.],
+        [  940.,  5642., 56183.]], dtype=torch.float64)
+	 Val. Loss: 0.315 |  Val. Acc: 87.68%
+tensor([0.9079, 0.7991, 0.9070, 0.8683])

@@ -1,0 +1,24 @@
+nohup: ignoring input
+Bert Tokenizer Loaded...
+Data loading complete
+Number of training examples: 441000
+Number of validation examples: 189000
+Number of test examples: 270000
+defaultdict(None, {'0.0': 0, '1.0': 1, '2.0': 2})
+Device in use:  cuda
+Traceback (most recent call last):
+  File "main.py", line 205, in <module>
+    train_loss, train_acc = train(model, train_iterator, optimizer, criterion)
+  File "main.py", line 122, in train
+    predictions =  model(batch.text, batch_size = len(batch)).squeeze(1)
+  File "/opt/conda/envs/SAEnv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/root/PLPhuc/multichannel_cnnattention/test1/hybrid_model.py", line 75, in forward
+    output_ln1 = self.fc1(cnn_attention_cat)
+  File "/opt/conda/envs/SAEnv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/SAEnv/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/opt/conda/envs/SAEnv/lib/python3.7/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x600 and 250x200)
