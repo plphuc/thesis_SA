@@ -66,7 +66,7 @@ train_data, test_data = data.TabularDataset.splits(
                             path = data_path,
                             train = train_name,
                             test = test_name,
-                            format = 'txt',
+                            format = 'tsv',
                             fields = fields,
                             skip_header = True)
 
