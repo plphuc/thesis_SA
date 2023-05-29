@@ -23,9 +23,9 @@ from sklearn.metrics import f1_score
 from transformers import PhobertTokenizer, AutoTokenizer, XLMRobertaTokenizer, RobertaForSequenceClassification
 import sys
 
-data_path = "./data/VLSP"
-train_name = "VLSP_train.csv"
-test_name = "VLSP_test.csv"
+data_path = "./data/VLSP_copy"
+train_name = "VLSP_train.tsv"
+test_name = "VLSP_test.tsv"
 
 model_save_path = sys.argv[1]
 
