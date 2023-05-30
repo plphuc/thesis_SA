@@ -1,3 +1,4 @@
+sentiment,text
 2.0,Không nên mua chuột cua Logitech vì dùng nó rất khó đổi cái mới Mình nghe thằng bạn xúi mua con M325 cách đây 5 năm dù có cơ _ số lần rơi _ rớt quăng _ quật mà đến giờ vẫn chưa hư Giờ đang thèm em MX _ Anywhere _ 2 này mà chuột cũ chưa hư sao mua chuột mới
 1.0,Nói thiệt là mình thì thì chuột nào mình cũng chơi tuốt chỉ trừ 1 hãng ra Razer_Mình đang sở _ hữu 1 con DA black xài được 6 tháng nó bị double click đem sửa xong xài được them 2 tháng nữa nó bị hư nút cuộn Trong khi con SS _ Sensei mình xài 3 năm mới bị double click và rít nút cuộn
 0.0,Xai chuot so nhat bi double _ click
