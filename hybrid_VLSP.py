@@ -4,9 +4,9 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 
 class MultiChannel_CNNAttentionModel(nn.Module):
-    def __init__(self, bert, output_dim, dropout, n_filters, filter_sizes, batch_size, hidden_dim, vocab_size, embedding_length):
+    def __init__(self, Phobert, output_dim, dropout, n_filters, filter_sizes, batch_size, hidden_dim, vocab_size, embedding_length):
         super().__init__()
-        self.bert = bert
+        self.Phobert = Phobert
         self.output_dim = output_dim
         self.dropout = dropout
         self.n_filters = n_filters
@@ -19,7 +19,8 @@ class MultiChannel_CNNAttentionModel(nn.Module):
         self.do = nn.Dropout(dropout)
 
         # CNN
-        embedding_dim = bert.config.to_dict()['hidden_size']
+        embedding_dim = Phobert.config.to_dict()['hidden_size']
+        
         self.conv_0 = nn.Conv2d(1, n_filters, (filter_sizes[0], embedding_dim))
         self.conv_1 = nn.Conv2d(1, n_filters, (filter_sizes[1], embedding_dim))
         self.conv_2 = nn.Conv2d(1, n_filters, (filter_sizes[2], embedding_dim))
@@ -49,7 +50,7 @@ class MultiChannel_CNNAttentionModel(nn.Module):
 
     def forward(self, text, batch_size):
         with torch.no_grad():
-            input = self.bert(text)[0]
+            input = self.Phobert(text)[0]
 
         # CNN
         embedded = input.unsqueeze(1)
