@@ -186,7 +186,7 @@ HIDDEN_DIM = 100
 
 # from origin_attention_model  import AttentionModel
 # from origin_cnn_model import BERTCNNSentiment
-from hybrid import MultiChannel_CNNAttentionModel
+from hybrid_VLSP import MultiChannel_CNNAttentionModel
 
 # model = torch.load(model_save_name)
 
