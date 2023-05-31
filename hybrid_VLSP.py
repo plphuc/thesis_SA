@@ -20,7 +20,7 @@ class MultiChannel_CNNAttentionModel(nn.Module):
 
         # CNN
         embedding_dim = Phobert.config.to_dict()['hidden_size']
-        
+        print('đây là : ' embedding_dim)
         self.conv_0 = nn.Conv2d(1, n_filters, (filter_sizes[0], embedding_dim))
         self.conv_1 = nn.Conv2d(1, n_filters, (filter_sizes[1], embedding_dim))
         self.conv_2 = nn.Conv2d(1, n_filters, (filter_sizes[2], embedding_dim))
@@ -51,10 +51,11 @@ class MultiChannel_CNNAttentionModel(nn.Module):
     def forward(self, text, batch_size):
         with torch.no_grad():
             input = self.Phobert(text)[0]
+            print('input___ :' input)
 
         # CNN
         embedded = input.unsqueeze(1)
-
+        print('embedded ' embedded )
         #embedded = [batch size, 1, sent len, emb dim]
         conved_0 = F.relu(self.conv_0(embedded).squeeze(3))
         conved_1 = F.relu(self.conv_1(embedded).squeeze(3))
