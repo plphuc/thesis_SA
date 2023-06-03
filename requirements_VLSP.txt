@@ -25,3 +25,4 @@ torchtext==0.10.1
 tqdm==4.53.0
 git+https://github.com/huggingface/transformers
 urllib3==1.26.2
+git+https://github.com/pytorch/fairseq
