@@ -20,7 +20,7 @@ import torch.optim as optim
 
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
-from transformers import PhobertTokenizer, AutoTokenizer, XLMRobertaTokenizer, RobertaForSequenceClassification
+from transformers import PhobertTokenizer, AutoTokenizer, XLMRobertaTokenizer, RobertaForSequenceClassification,RobertaModel
 import sys
 
 data_path = "./data/VLSP"
@@ -89,7 +89,7 @@ train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
                                                   sort_key = lambda x: len(x.text),
                                                   batch_size = BATCH_SIZE,
                                                   device = device)
-Phobert = RobertaForSequenceClassification.from_pretrained("wonrax/phobert-base-vietnamese-sentiment")
+Phobert = RobertaModel.from_pretrained('vinai/phobert-base')
 #Phobert = AutoModel.from_pretrained("vinai/phobert-base-v2")
 #https://huggingface.co/wonrax/phobert-base-vietnamese-sentiment
 
