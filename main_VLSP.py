@@ -24,8 +24,8 @@ from transformers import PhobertTokenizer, AutoTokenizer, XLMRobertaTokenizer, R
 import sys
 
 data_path = "./data/VLSP"
-train_name = "vlsp_train.tsv"
-test_name = "vlsp_test.tsv"
+train_name = "vlsp_train.csv"
+test_name = "vlsp_test.csv"
 
 model_save_path = sys.argv[1]
 
@@ -89,6 +89,16 @@ train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
                                                   sort_key = lambda x: len(x.text),
                                                   batch_size = BATCH_SIZE,
                                                   device = device)
+
+#
+# get the first batch of examples from the train iterator
+batch = next(iter(train_iterator))
+# print the first example in the batch
+print('batch text', batch.text[0])
+print('batch label',batch.label[0])
+
+
+
 Phobert = RobertaModel.from_pretrained('vinai/phobert-base')
 #Phobert = AutoModel.from_pretrained("vinai/phobert-base-v2")
 #https://huggingface.co/wonrax/phobert-base-vietnamese-sentiment
