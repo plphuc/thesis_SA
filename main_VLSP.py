@@ -90,12 +90,6 @@ train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
                                                   batch_size = BATCH_SIZE,
                                                   device = device)
 
-#
-# get the first batch of examples from the train iterator
-batch = next(iter(train_iterator))
-# print the first example in the batch
-print('batch text', batch.text[0])
-print('batch label',batch.label[0])
 
 
 
