@@ -16,7 +16,7 @@ import sys
 
 data_path = "./data/debug/"
 train_name = "train_db.csv"
-test_name = "test_db.csv"
+test_name = "test.csv"
 model_save_path = sys.argv[1]
 
 
