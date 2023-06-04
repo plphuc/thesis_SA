@@ -37,10 +37,10 @@ torch.backends.cudnn.deterministic = True
 tokenizer = PhobertTokenizer.from_pretrained("vinai/phobert-base-v2")
 print('Phobert Tokenizer Loaded...')
 
-init_token_idx = tokenizer.cls_token
-eos_token_idx = tokenizer.sep_token
-pad_token_idx = tokenizer.pad_token
-unk_token_idx = tokenizer.unk_token
+init_token_idx = tokenizer.cls_token_id
+eos_token_idx = tokenizer.sep_token_id
+pad_token_idx = tokenizer.pad_token_id
+unk_token_idx = tokenizer.unk_token_id
 
 BATCH_SIZE = 64
 max_input_length = 400 # xem lại
