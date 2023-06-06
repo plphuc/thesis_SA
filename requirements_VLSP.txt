@@ -26,3 +26,4 @@ tqdm==4.53.0
 git+https://github.com/huggingface/transformers
 urllib3==1.26.2
 
+fairseq==0.8.0
