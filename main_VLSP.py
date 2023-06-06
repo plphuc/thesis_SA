@@ -43,7 +43,7 @@ pad_token_idx = tokenizer.pad_token_id
 unk_token_idx = tokenizer.unk_token_id
 
 BATCH_SIZE = 64
-max_input_length = 400 # xem lại
+max_input_length = 250 # xem lại
 
 def tokenize_and_cut(sentence):
     tokens = tokenizer.tokenize(sentence) 
